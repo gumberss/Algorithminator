@@ -1,8 +1,5 @@
 ﻿using Algorithminator.Palindrome;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace AlgorithminatorTests.Palindrome
@@ -34,6 +31,7 @@ namespace AlgorithminatorTests.Palindrome
         [InlineData("paa")]
         [InlineData("not")]
         [InlineData("palindrome")]
+        
         public void Should_return_false_when_the_text_is_not_palindrome(string text)
         {
             var result = _service.Palindrome(text);
