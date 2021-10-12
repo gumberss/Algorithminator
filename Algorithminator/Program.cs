@@ -1,4 +1,5 @@
 ﻿using Algorithminator.Fibonacci;
+using BenchmarkDotNet.Running;
 using System;
 
 namespace Algorithminator
@@ -7,8 +8,9 @@ namespace Algorithminator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new FibonacciService().Slow(10));
-            Console.WriteLine(new FibonacciService().LogN(10));
+            //Console.WriteLine(new FibonacciService().Slow(10));
+            //Console.WriteLine(new FibonacciService().LogN(10));
+            var summary = BenchmarkRunner.Run(typeof(Program).Assembly);
         }
     }
 }
