@@ -19,7 +19,7 @@ namespace AlgorithminatorTests.Sums
         }
 
         [Fact]
-        public void Shoud_return_the_numbers_in_the_array_that_when_summed_is_the_number()
+        public void Should_return_the_numbers_in_the_array_that_when_summed_is_the_number()
         {
             var number = 9;
             var array = new[] { 18, 7, 6, 4, 3, 1 };
@@ -30,7 +30,7 @@ namespace AlgorithminatorTests.Sums
         }
 
         [Fact]
-        public void Shoud_not_return_the_numbers_in_the_array_that_when_there_is_no_sum_that_make_the_number()
+        public void Should_not_return_the_numbers_in_the_array_that_when_there_is_no_sum_that_make_the_number()
         {
             var number = 9;
             var array = new[] { 18, 7, 6, 4, 0, 1 };
