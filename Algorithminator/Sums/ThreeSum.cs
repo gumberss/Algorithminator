@@ -15,7 +15,7 @@ namespace Algorithminator.Sums
             var ordered = array.OrderByDescending(x => x).ToArray();
 
             int front = 1;
-            int back = ordered.Length - 1;
+            int back;
 
             //O(n)
             for (int i = 0; i < ordered.Length - 2; i++)
