@@ -8,7 +8,7 @@ namespace Algorithminator.PerformanceTests
 {
     public class WhereAnd
     {
-        //Slow  
+        //Slower  
         public int[] MultiWhere(int[] array)
         {
             return array
@@ -21,7 +21,7 @@ namespace Algorithminator.PerformanceTests
                 .ToArray();
         }
    
-        //Fast
+        //Faster
         public int[] And(int[] array)
         {
             return array
