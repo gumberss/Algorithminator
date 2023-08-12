@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "gts": "^5.0.0",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
+  },
+  "dependencies": {}
+}
