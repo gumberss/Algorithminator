@@ -56,8 +56,8 @@ namespace ConflictFree
                 if (point == 0) return;
 
                 Task.Run(() =>
-                {
-                    var removed = text1[point - 1];
+               {
+                    var removed = text1.Where(x => !x.Deleted).ToList()[point - 1];
                     Conflict.ProcessDeletion(text1, removed);
                     Thread.Sleep(2000);
                     Conflict.ProcessDeletion(text2, removed);
@@ -92,24 +92,27 @@ namespace ConflictFree
 
             if (e.KeyData == Keys.Back)
             {
+                if (point == 0) return;
+
                 Task.Run(() =>
                 {
-                    var removed = text2[point - 1];
+                    var removed = text2.Where(x => !x.Deleted).ToList()[point - 1];
                     Conflict.ProcessDeletion(text2, removed);
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     Conflict.ProcessDeletion(text1, removed);
-                    SetText(textBox2, text1);
+                    SetText(textBox1, text1);
                 });
             }
             else
             {
                 Task.Run(() =>
                 {
-                    var near = NearActive(text1, point);
+
+                    var near = NearActive(text2.Where(x => !x.Deleted).ToList(), point);
                     var key = $"{globalValText2++}_node2";
                     var c = new Character(key, ((char)e.KeyValue).ToString(), near?.Key);
                     Conflict.ProcessConflict(text2, c);
-                    Thread.Sleep(2000);
+                    Thread.Sleep(5000);
                     Conflict.ProcessConflict(text1, c);
                     SetText(textBox1, text1);
                 });
